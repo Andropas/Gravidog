@@ -1,15 +1,15 @@
-extends KinematicBody2D
+extends CharacterBody2D
 
 signal game_over
 signal player_reached
 
 var gravityVec = Vector2(0, 1)
-var gravity = 1000
-var max_gravity = 500
+var gravity = 1000/3
+var max_gravity = 500/3
 var vel = Vector2()
 var rotating_speed = 10
-export var jumpspeed = 800
-export var speed = 200
+@export var jumpspeed = 800/3
+@export var speed = 200/3
 var can_change_gravity = true
 var rotate_to = 0
 
@@ -17,7 +17,7 @@ func die():
 	emit_signal("game_over")
 
 func jump():
-	vel = jumpspeed * (-Vector2(gravityVec.x, gravityVec.y))
+	velocity = jumpspeed * (-Vector2(gravityVec.x, gravityVec.y))
 
 func change_gravity(vec):
 	if gravityVec != vec:
@@ -33,18 +33,19 @@ func move(delta):
 		vel.x *= abs(gravityVec.x)
 		vel.y *= abs(gravityVec.y)
 
-	vel += gravityVec * gravity * delta
-	if Vector2(vel.x * gravityVec.x, vel.y + gravityVec.y).length() >= max_gravity:
-		vel = vel.normalized() * max_gravity
+	velocity += gravityVec * gravity * delta
+	if Vector2(velocity.x * gravityVec.x, velocity.y + gravityVec.y).length() >= max_gravity:
+		velocity = velocity.normalized() * max_gravity
 
 func _process(delta):
 	move(delta)
-	if abs($Shape.rotation - rotate_to) >= rotating_speed*delta:
-		$Shape.rotation += rotating_speed*delta*sign(rotate_to - $Shape.rotation)
+	if abs($Shape3D.rotation - rotate_to) >= rotating_speed*delta:
+		$Shape3D.rotation += rotating_speed*delta*sign(rotate_to - $Shape3D.rotation)
 	else:
-		$Shape.rotation = rotate_to
+		$Shape3D.rotation = rotate_to
 
-	vel = move_and_slide(vel, -gravityVec)
+	set_up_direction(-gravityVec)
+	move_and_slide()
 
 func _on_Radar_body_entered(body):
 	if body.is_in_group("Player"):
