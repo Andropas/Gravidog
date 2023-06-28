@@ -11,7 +11,6 @@ var rotating_speed = 10
 @export var speed = 200/3
 var can_change_gravity = true
 var rotate_to = 0
-@onready var sprite = $Shape3D
 
 func die():
 	emit_signal("game_over")
@@ -42,24 +41,24 @@ func move(delta):
 #			vel = speed * (-Vector2(gravityVec.y, -gravityVec.x))
 		if gravityVec.y:
 			vel.x = -speed
-			sprite.scale.x = -gravityVec.y
+			$Shape3D.scale.x = -gravityVec.y
 
 	if Input.is_action_pressed("move_right"):
 #		if is_on_floor():
 #			vel = speed * (Vector2(gravityVec.y, -gravityVec.x))
 		if gravityVec.y:
 			vel.x = speed * abs(gravityVec.y)
-			sprite.scale.x = gravityVec.y
+			$Shape3D.scale.x = gravityVec.y
 	
 	if Input.is_action_pressed("move_up"):
 		if gravityVec.x:
 			vel.y = -speed
-			sprite.scale.x = gravityVec.x
+			$Shape3D.scale.x = gravityVec.x
 	
 	if Input.is_action_pressed("move_down"):
 		if gravityVec.x:
 			vel.y = speed
-			sprite.scale.x = -gravityVec.x
+			$Shape3D.scale.x = -gravityVec.x
 	
 	if can_change_gravity:
 		if Input.is_action_just_pressed("ui_left"):
@@ -80,10 +79,10 @@ func move(delta):
 
 func _process(delta):
 	move(delta)
-	if abs(sprite.rotation - rotate_to) >= rotating_speed*delta:
-		sprite.rotation += rotating_speed*delta*sign(rotate_to - sprite.rotation)
+	if abs($Shape3D.rotation - rotate_to) >= rotating_speed*delta:
+		$Shape3D.rotation += rotating_speed*delta*sign(rotate_to - $Shape3D.rotation)
 	else:
-		sprite.rotation = rotate_to
+		$Shape3D.rotation = rotate_to
 #	$Camera2D.rotation = $Shape.rotation
 	set_velocity(vel)
 	set_up_direction(-gravityVec)
