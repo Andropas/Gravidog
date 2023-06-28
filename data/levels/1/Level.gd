@@ -5,7 +5,6 @@ func _ready():
 	pass # Replace with function body.
 
 func _on_GameZone_body_exited(body):
-	print(body.name)
 	if body.has_method("die"):
 		body.die()
 
