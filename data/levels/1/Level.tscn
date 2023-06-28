@@ -1,11 +1,10 @@
-[gd_scene load_steps=62 format=2]
+[gd_scene load_steps=61 format=2]
 
 [ext_resource path="res://data/player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://data/levels/demo/bluenatse.png" type="Texture" id=2]
 [ext_resource path="res://data/levels/demo/natse.png" type="Texture" id=3]
 [ext_resource path="res://data/levels/demo/bg.png" type="Texture" id=4]
 [ext_resource path="res://data/levels/demo/tilesheet.png" type="Texture" id=5]
-[ext_resource path="res://data/chars/demo/Dog.tscn" type="PackedScene" id=6]
 [ext_resource path="res://data/levels/1/Level.gd" type="Script" id=7]
 [ext_resource path="res://data/levels/demo/light.png" type="Texture" id=8]
 [ext_resource path="res://data/levels/demo/present.png" type="Texture" id=9]
@@ -355,19 +354,19 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 0/z_index = 0
 
 [sub_resource type="RectangleShape2D" id=29]
-extents = Vector2( 610.25, 372.19 )
+extents = Vector2( 215, 136 )
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 7 )
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="."]
-layer = -2
-
-[node name="Light2D2" type="Light2D" parent="CanvasLayer2"]
+[node name="Light2D2" type="Light2D" parent="."]
 position = Vector2( 160.162, 0 )
 scale = Vector2( 11.0609, 11.0609 )
 texture = ExtResource( 8 )
 shadow_enabled = true
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = -2
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer2"]
 visible = false
@@ -382,12 +381,16 @@ anchor_bottom = 1.0
 texture = ExtResource( 4 )
 expand = true
 
-[node name="TileMap2" type="TileMap" parent="CanvasLayer2"]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+follow_viewport_enable = true
+follow_viewport_scale = 0.7
+
+[node name="TileMap2" type="TileMap" parent="CanvasLayer"]
 modulate = Color( 1, 1, 1, 0.592157 )
 self_modulate = Color( 1, 1, 1, 0.890196 )
 light_mask = 0
-position = Vector2( 100.641, 114.716 )
-scale = Vector2( 2, 2 )
+position = Vector2( 4.76837e-07, -5.96046e-08 )
 tile_set = SubResource( 52 )
 cell_size = Vector2( 16, 16 )
 collision_layer = 0
@@ -396,7 +399,6 @@ format = 1
 tile_data = PoolIntArray( 65549, 0, 196609, 131076, 0, 196609, 131085, 0, 65536, 196612, 0, 65538, 196621, 0, 65536, 262148, 0, 131072, 262149, 0, 131073, 262150, 0, 1, 262151, 0, 131073, 262152, 0, 262146, 262157, 0, 65536, 327693, 0, 65538, 393229, 0, 65538, 393232, 0, 262144, 393233, 0, 131073, 393234, 0, 2, 458756, 0, 196609, 458760, 0, 0, 458761, 0, 131073, 458762, 0, 2, 458765, 0, 327681, 458770, 0, 65536, 524292, 0, 65536, 524296, 0, 65538, 524298, 0, 65538, 524306, 0, 65536, 589828, 0, 327681, 589832, 0, 131072, 589833, 0, 131073, 589834, 0, 131074, 589842, 0, 65536, 655377, 0, 262144, 655378, 0, 131074 )
 
 [node name="TileMap" type="TileMap" parent="."]
-scale = Vector2( 3, 3 )
 tile_set = SubResource( 53 )
 cell_size = Vector2( 16, 16 )
 collision_mask = 3
@@ -426,19 +428,16 @@ position = Vector2( 132.862, 57.5966 )
 texture = ExtResource( 9 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 343.266, 152.563 )
+position = Vector2( 107, 54 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 rotating = true
 current = true
 limit_left = 0
 limit_top = 0
-limit_right = 1097
-limit_bottom = 646
+limit_right = 341
+limit_bottom = 201
 editor_draw_limits = true
-
-[node name="Dog" parent="." instance=ExtResource( 6 )]
-position = Vector2( 848, 445.234 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.360784, 0.352941, 0.423529, 1 )
@@ -447,10 +446,8 @@ color = Color( 0.360784, 0.352941, 0.423529, 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GameZone"]
 visible = false
-position = Vector2( 540, 326 )
+position = Vector2( 179, 98 )
 shape = SubResource( 29 )
 
 [connection signal="game_over" from="Player" to="." method="_on_Dog_game_over"]
-[connection signal="game_over" from="Dog" to="." method="_on_Dog_game_over"]
-[connection signal="player_reached" from="Dog" to="." method="_on_Dog_player_reached"]
 [connection signal="body_exited" from="GameZone" to="." method="_on_GameZone_body_exited"]

@@ -4,27 +4,26 @@
 [ext_resource path="res://data/player/Player.gd" type="Script" id=2]
 [ext_resource path="res://data/player/nimb.png" type="Texture" id=3]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 18, 16.964 )
+[sub_resource type="CircleShape2D" id=1]
+radius = 8.0
 
 [node name="Player" type="KinematicBody2D" groups=["Dog", "Player", "UseGravity"]]
 collision_layer = 2
 script = ExtResource( 2 )
 
 [node name="Shape" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -1.03602 )
+position = Vector2( 0, -3 )
 shape = SubResource( 1 )
 __meta__ = {
 "_editor_description_": ""
 }
 
 [node name="Sprite" type="Sprite" parent="Shape"]
-position = Vector2( 0, -7.15499 )
-scale = Vector2( 3, 3 )
+position = Vector2( 6, -7 )
 texture = ExtResource( 1 )
-offset = Vector2( 5.60597, -6.92953 )
 
 [node name="Sprite2" type="Sprite" parent="Shape/Sprite"]
+visible = false
 position = Vector2( 6.01041, -8.13173 )
 texture = ExtResource( 3 )
 

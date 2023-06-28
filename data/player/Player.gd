@@ -3,12 +3,12 @@ extends KinematicBody2D
 signal game_over
 
 var gravityVec = Vector2(0, 1)
-var gravity = 1000
-var max_gravity = 500
+var gravity = 1000/3
+var max_gravity = 500/3
 var vel = Vector2()
 var rotating_speed = 10
-export var jumpspeed = 800
-export var speed = 200
+export var jumpspeed = 800/3
+export var speed = 200/3
 var can_change_gravity = true
 var rotate_to = 0
 
