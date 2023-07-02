@@ -80,6 +80,12 @@ move_down={
  ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Platforms"
+2d_physics/layer_2="Items"
+2d_physics/layer_3="Bones"
+
 [rendering]
 
 2d/snapping/use_gpu_pixel_snap=true

@@ -17,4 +17,5 @@ shape = SubResource( 1 )
 position = Vector2( -4.76837e-07, -4.76837e-07 )
 scale = Vector2( 0.75, 0.75 )
 texture = ExtResource( 1 )
+
 [connection signal="body_entered" from="." to="." method="_on_Thorn_body_entered"]

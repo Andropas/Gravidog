@@ -12,6 +12,8 @@ export var speed = 200/3
 var can_change_gravity = true
 var rotate_to = 0
 
+signal picked_item(item)
+
 func die():
 	emit_signal("game_over")
 
@@ -79,9 +81,12 @@ func move(delta):
 
 func _process(delta):
 	move(delta)
+	
+	# CHANGE WITH TWEENS!!!
 	if abs($Shape.rotation - rotate_to) >= rotating_speed*delta:
 		$Shape.rotation += rotating_speed*delta*sign(rotate_to - $Shape.rotation)
 	else:
 		$Shape.rotation = rotate_to
-#	$Camera2D.rotation = $Shape.rotation
+	# CHANGE WITH TWEENS
+	
 	vel = move_and_slide(vel, -gravityVec, true, 4, 0.0, false)
