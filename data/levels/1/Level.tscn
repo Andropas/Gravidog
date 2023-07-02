@@ -1,15 +1,16 @@
-[gd_scene load_steps=61 format=2]
+[gd_scene load_steps=68 format=2]
 
 [ext_resource path="res://data/player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://data/levels/demo/bluenatse.png" type="Texture" id=2]
 [ext_resource path="res://data/levels/demo/natse.png" type="Texture" id=3]
 [ext_resource path="res://data/levels/demo/bg.png" type="Texture" id=4]
 [ext_resource path="res://data/levels/demo/tilesheet.png" type="Texture" id=5]
+[ext_resource path="res://icon.png" type="Texture" id=6]
 [ext_resource path="res://data/levels/1/Level.gd" type="Script" id=7]
-[ext_resource path="res://data/levels/demo/light.png" type="Texture" id=8]
 [ext_resource path="res://data/levels/demo/present.png" type="Texture" id=9]
 [ext_resource path="res://data/levels/demo/mashroom.png" type="Texture" id=10]
 [ext_resource path="res://data/levels/demo/tree.png" type="Texture" id=11]
+[ext_resource path="res://offsetshadow.shader" type="Shader" id=12]
 
 [sub_resource type="TileSet" id=52]
 0/name = "tilesheet.png 0"
@@ -37,70 +38,70 @@
 0/z_index = 0
 
 [sub_resource type="OccluderPolygon2D" id=30]
-polygon = PoolVector2Array( 4, 4, 12, 4, 16, 4, 16, 12, 12, 12, 12, 16, 4, 16 )
+polygon = PoolVector2Array( 7, 7, 16, 7, 16, 9, 16, 9, 9, 9, 9, 16, 7, 16 )
 
 [sub_resource type="OccluderPolygon2D" id=31]
-polygon = PoolVector2Array( 12, 16, 4, 16, 4, 0, 12, 0 )
+polygon = PoolVector2Array( 9, 16, 7, 16, 7, 0, 9, 0 )
 
 [sub_resource type="OccluderPolygon2D" id=32]
-polygon = PoolVector2Array( 4, 0, 12, 0, 12, 4, 16, 4, 16, 12, 4, 12 )
+polygon = PoolVector2Array( 7, 0, 9, 0, 9, 7, 16, 7, 16, 9, 7, 9 )
 
 [sub_resource type="OccluderPolygon2D" id=54]
-polygon = PoolVector2Array( 4, 4, 16, 4, 16, 12, 4, 12 )
+polygon = PoolVector2Array( 7, 7, 16, 7, 16, 9, 7, 9 )
 
 [sub_resource type="OccluderPolygon2D" id=34]
-polygon = PoolVector2Array( 0, 4, 16, 4, 16, 12, 0, 12 )
+polygon = PoolVector2Array( 0, 7, 16, 7, 16, 9, 0, 9 )
 
 [sub_resource type="OccluderPolygon2D" id=35]
-polygon = PoolVector2Array( 16, 12, 0, 12, 0, 4, 16, 4 )
+polygon = PoolVector2Array( 16, 9, 0, 9, 0, 7, 16, 7 )
 
 [sub_resource type="OccluderPolygon2D" id=36]
-polygon = PoolVector2Array( 12, 16, 4, 16, 4, 4, 12, 4 )
+polygon = PoolVector2Array( 9, 16, 7, 16, 7, 7, 9, 7 )
 
 [sub_resource type="OccluderPolygon2D" id=37]
-polygon = PoolVector2Array( 0, 4, 0, 4, 4, 4, 4, 0, 8, 0, 12, 0, 12, 4, 16, 4, 16, 12, 12, 12, 12, 16, 4, 16, 4, 12, 0, 12 )
+polygon = PoolVector2Array( 0, 7, 0, 7, 7, 7, 7, 0, 8, 0, 9, 0, 9, 7, 16, 7, 16, 9, 9, 9, 9, 16, 7, 16, 7, 9, 0, 9 )
 
 [sub_resource type="OccluderPolygon2D" id=55]
-polygon = PoolVector2Array( 4, 0, 12, 0, 12, 12, 4, 12 )
+polygon = PoolVector2Array( 7, 0, 9, 0, 9, 9, 7, 9 )
 
 [sub_resource type="OccluderPolygon2D" id=39]
-polygon = PoolVector2Array( 0, 4, 0, 4, 12, 4, 12, 16, 12, 16, 4, 16, 4, 12, 0, 12 )
+polygon = PoolVector2Array( 0, 7, 0, 7, 9, 7, 9, 16, 12, 16, 7, 16, 7, 9, 0, 9 )
 
 [sub_resource type="OccluderPolygon2D" id=40]
-polygon = PoolVector2Array( 4, 0, 12, 0, 12, 16, 4, 16 )
+polygon = PoolVector2Array( 7, 0, 9, 0, 9, 16, 7, 16 )
 
-[sub_resource type="OccluderPolygon2D" id=41]
-polygon = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+[sub_resource type="OccluderPolygon2D" id=57]
+polygon = PoolVector2Array( 0, 9, 9, 9, 9, 0, 7, 0, 7, 7, 0, 7 )
 
 [sub_resource type="OccluderPolygon2D" id=42]
-polygon = PoolVector2Array( 12, 12, 0, 12, 0, 4, 12, 4 )
+polygon = PoolVector2Array( 9, 9, 0, 9, 0, 7, 9, 7 )
 
 [sub_resource type="OccluderPolygon2D" id=43]
-polygon = PoolVector2Array( 16, 16, 4, 16, 4, 4, 16, 4 )
+polygon = PoolVector2Array( 16, 16, 7, 16, 7, 7, 16, 7 )
 
 [sub_resource type="OccluderPolygon2D" id=44]
-polygon = PoolVector2Array( 16, 16, 4, 16, 4, 0, 16, 0 )
+polygon = PoolVector2Array( 16, 16, 7, 16, 7, 0, 16, 0 )
 
 [sub_resource type="OccluderPolygon2D" id=45]
-polygon = PoolVector2Array( 16, 12, 4, 12, 4, 0, 16, 0 )
+polygon = PoolVector2Array( 16, 9, 7, 9, 7, 0, 16, 0 )
 
 [sub_resource type="OccluderPolygon2D" id=46]
-polygon = PoolVector2Array( 16, 16, 0, 16, 0, 4, 16, 4 )
+polygon = PoolVector2Array( 16, 16, 0, 16, 0, 7, 16, 7 )
 
 [sub_resource type="OccluderPolygon2D" id=47]
 polygon = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 
 [sub_resource type="OccluderPolygon2D" id=48]
-polygon = PoolVector2Array( 16, 12, 0, 12, 0, 0, 16, 0 )
+polygon = PoolVector2Array( 16, 9, 0, 9, 0, 0, 16, 0 )
 
 [sub_resource type="OccluderPolygon2D" id=49]
-polygon = PoolVector2Array( 12, 16, 0, 16, 0, 4, 12, 4 )
+polygon = PoolVector2Array( 9, 16, 0, 16, 0, 7, 9, 7 )
 
 [sub_resource type="OccluderPolygon2D" id=50]
-polygon = PoolVector2Array( 12, 16, 0, 16, 0, 0, 12, 0 )
+polygon = PoolVector2Array( 9, 16, 0, 16, 0, 0, 9, 0 )
 
 [sub_resource type="OccluderPolygon2D" id=51]
-polygon = PoolVector2Array( 12, 12, 0, 12, 0, 0, 12, 0 )
+polygon = PoolVector2Array( 9, 9, 0, 9, 0, 0, 9, 0 )
 
 [sub_resource type="ConvexPolygonShape2D" id=3]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -189,7 +190,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 0/autotile/icon_coordinate = Vector2( 0, 0 )
 0/autotile/tile_size = Vector2( 16, 16 )
 0/autotile/spacing = 0
-0/autotile/occluder_map = [ Vector2( 0, 0 ), SubResource( 30 ), Vector2( 0, 1 ), SubResource( 31 ), Vector2( 0, 2 ), SubResource( 32 ), Vector2( 0, 4 ), SubResource( 54 ), Vector2( 1, 0 ), SubResource( 34 ), Vector2( 1, 2 ), SubResource( 35 ), Vector2( 1, 3 ), SubResource( 36 ), Vector2( 1, 4 ), SubResource( 37 ), Vector2( 1, 5 ), SubResource( 55 ), Vector2( 2, 0 ), SubResource( 39 ), Vector2( 2, 1 ), SubResource( 40 ), Vector2( 2, 2 ), SubResource( 41 ), Vector2( 2, 4 ), SubResource( 42 ), Vector2( 3, 0 ), SubResource( 43 ), Vector2( 3, 1 ), SubResource( 44 ), Vector2( 3, 2 ), SubResource( 45 ), Vector2( 4, 0 ), SubResource( 46 ), Vector2( 4, 1 ), SubResource( 47 ), Vector2( 4, 2 ), SubResource( 48 ), Vector2( 5, 0 ), SubResource( 49 ), Vector2( 5, 1 ), SubResource( 50 ), Vector2( 5, 2 ), SubResource( 51 ) ]
+0/autotile/occluder_map = [ Vector2( 0, 0 ), SubResource( 30 ), Vector2( 0, 1 ), SubResource( 31 ), Vector2( 0, 2 ), SubResource( 32 ), Vector2( 0, 4 ), SubResource( 54 ), Vector2( 1, 0 ), SubResource( 34 ), Vector2( 1, 2 ), SubResource( 35 ), Vector2( 1, 3 ), SubResource( 36 ), Vector2( 1, 4 ), SubResource( 37 ), Vector2( 1, 5 ), SubResource( 55 ), Vector2( 2, 0 ), SubResource( 39 ), Vector2( 2, 1 ), SubResource( 40 ), Vector2( 2, 2 ), SubResource( 57 ), Vector2( 2, 4 ), SubResource( 42 ), Vector2( 3, 0 ), SubResource( 43 ), Vector2( 3, 1 ), SubResource( 44 ), Vector2( 3, 2 ), SubResource( 45 ), Vector2( 4, 0 ), SubResource( 46 ), Vector2( 4, 1 ), SubResource( 47 ), Vector2( 4, 2 ), SubResource( 48 ), Vector2( 5, 0 ), SubResource( 49 ), Vector2( 5, 1 ), SubResource( 50 ), Vector2( 5, 2 ), SubResource( 51 ) ]
 0/autotile/navpoly_map = [  ]
 0/autotile/priority_map = [  ]
 0/autotile/z_index_map = [  ]
@@ -353,40 +354,52 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 0/z_index = 0
 
+[sub_resource type="CircleShape2D" id=56]
+radius = 19.0263
+
 [sub_resource type="RectangleShape2D" id=29]
-extents = Vector2( 215, 136 )
+extents = Vector2( 302.5, 204 )
+
+[sub_resource type="ViewportTexture" id=69]
+
+[sub_resource type="ShaderMaterial" id=70]
+resource_local_to_scene = true
+shader = ExtResource( 12 )
+shader_param/offset = Vector2( 8, 8 )
+shader_param/modulate = null
+shader_param/shadow = SubResource( 69 )
+
+[sub_resource type="ViewportTexture" id=59]
+viewport_path = NodePath("MainLayer/ViewportContainer/Viewport")
+
+[sub_resource type="ViewportTexture" id=68]
+viewport_path = NodePath("MainLayer/ViewportContainer/Viewport")
+
+[sub_resource type="ViewportTexture" id=67]
+viewport_path = NodePath("MainLayer/ViewportContainer/Viewport/ViewportContainer/Viewport")
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 7 )
 
-[node name="Light2D2" type="Light2D" parent="."]
-position = Vector2( 160.162, 0 )
-scale = Vector2( 11.0609, 11.0609 )
-texture = ExtResource( 8 )
-shadow_enabled = true
-
-[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+[node name="SkyLayer" type="CanvasLayer" parent="."]
 layer = -2
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer2"]
-visible = false
-modulate = Color( 1, 1, 1, 0.431373 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 1, 1, 1, 0.623529 )
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer2"]
+[node name="TextureRect" type="TextureRect" parent="SkyLayer"]
+light_mask = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 4 )
 expand = true
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="BackgroundLayer" type="CanvasLayer" parent="."]
 layer = -1
 follow_viewport_enable = true
-follow_viewport_scale = 0.7
+follow_viewport_scale = 0.5
 
-[node name="TileMap2" type="TileMap" parent="CanvasLayer"]
+[node name="TileMap2" type="TileMap" parent="BackgroundLayer"]
 modulate = Color( 1, 1, 1, 0.592157 )
 self_modulate = Color( 1, 1, 1, 0.890196 )
 light_mask = 0
@@ -398,56 +411,171 @@ collision_mask = 0
 format = 1
 tile_data = PoolIntArray( 65549, 0, 196609, 131076, 0, 196609, 131085, 0, 65536, 196612, 0, 65538, 196621, 0, 65536, 262148, 0, 131072, 262149, 0, 131073, 262150, 0, 1, 262151, 0, 131073, 262152, 0, 262146, 262157, 0, 65536, 327693, 0, 65538, 393229, 0, 65538, 393232, 0, 262144, 393233, 0, 131073, 393234, 0, 2, 458756, 0, 196609, 458760, 0, 0, 458761, 0, 131073, 458762, 0, 2, 458765, 0, 327681, 458770, 0, 65536, 524292, 0, 65536, 524296, 0, 65538, 524298, 0, 65538, 524306, 0, 65536, 589828, 0, 327681, 589832, 0, 131072, 589833, 0, 131073, 589834, 0, 131074, 589842, 0, 65536, 655377, 0, 262144, 655378, 0, 131074 )
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="MiddlegroundLayer" type="CanvasLayer" parent="."]
+follow_viewport_scale = 0.7
+
+[node name="MainLayer" type="CanvasLayer" parent="."]
+follow_viewport_enable = true
+
+[node name="ViewportContainer" type="ViewportContainer" parent="MainLayer"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch = true
+
+[node name="Viewport" type="Viewport" parent="MainLayer/ViewportContainer"]
+size = Vector2( 341, 200 )
+size_override_stretch = true
+transparent_bg = true
+handle_input_locally = false
+hdr = false
+disable_3d = true
+usage = 1
+render_target_v_flip = true
+render_target_update_mode = 3
+physics_object_picking = true
+gui_snap_controls_to_pixels = false
+
+[node name="ViewportContainer" type="ViewportContainer" parent="MainLayer/ViewportContainer/Viewport"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+stretch = true
+
+[node name="Viewport" type="Viewport" parent="MainLayer/ViewportContainer/Viewport/ViewportContainer"]
+size = Vector2( 341, 200 )
+size_override_stretch = true
+transparent_bg = true
+handle_input_locally = false
+hdr = false
+disable_3d = true
+usage = 1
+render_target_v_flip = true
+render_target_update_mode = 3
+physics_object_picking = true
+gui_snap_controls_to_pixels = false
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="MainLayer/ViewportContainer/Viewport/ViewportContainer/Viewport"]
+layer = 0
+follow_viewport_enable = true
+follow_viewport_scale = 0.7
+
+[node name="TileMap" type="TileMap" parent="MainLayer/ViewportContainer/Viewport/ViewportContainer/Viewport/CanvasLayer"]
 tile_set = SubResource( 53 )
 cell_size = Vector2( 16, 16 )
-collision_mask = 3
+compatibility_mode = true
 format = 1
-tile_data = PoolIntArray( 65549, 0, 196609, 131076, 0, 196609, 131085, 0, 65536, 196612, 0, 65538, 196621, 0, 65536, 262148, 0, 131072, 262149, 0, 131073, 262150, 0, 1, 262151, 0, 131073, 262152, 0, 262146, 262157, 0, 65536, 327693, 0, 65538, 393229, 0, 65538, 393232, 0, 262144, 393233, 0, 131073, 393234, 0, 2, 458756, 0, 196609, 458760, 0, 0, 458761, 0, 131073, 458762, 0, 2, 458765, 0, 327681, 458770, 0, 65536, 524292, 0, 65536, 524296, 0, 65538, 524298, 0, 65538, 524306, 0, 65536, 589828, 0, 327681, 589832, 0, 131072, 589833, 0, 131073, 589834, 0, 131074, 589842, 0, 65536, 655377, 0, 262144, 655378, 0, 131074 )
+tile_data = PoolIntArray( 2, 0, 196609, 65538, 0, 65538, 131073, 0, 0, 131074, 0, 131074, 196609, 0, 65538, 262145, 0, 131072, 262146, 0, 2, 327682, 0, 0, 327683, 0, 1, 327684, 0, 1, 327685, 0, 1, 327686, 0, 2, 327702, 0, 3, 327703, 0, 4, 327704, 0, 4, 327705, 0, 5, 393217, 0, 0, 393218, 0, 131074, 393222, 0, 65538, 393237, 0, 0, 393238, 0, 0, 393239, 0, 131076, 393240, 0, 131076, 393241, 0, 0, 393242, 0, 262146, 458753, 0, 65536, 458758, 0, 65536, 458772, 0, 3, 458773, 0, 0, 458777, 0, 327681, 458779, 0, 262144, 458780, 0, 262146, 524289, 0, 327681, 524294, 0, 131072, 524295, 0, 2, 524308, 0, 65539, 524309, 0, 0, 524310, 0, 262146, 589831, 0, 131072, 589832, 0, 1, 589833, 0, 2, 589843, 0, 262144, 589844, 0, 0, 589845, 0, 131077, 655369, 0, 131072, 655370, 0, 2, 655377, 0, 262144, 655378, 0, 2, 655380, 0, 65538, 720906, 0, 131072, 720907, 0, 2, 720911, 0, 262144, 720912, 0, 262146, 720914, 0, 0, 720915, 0, 131073, 720916, 0, 0, 786443, 0, 0, 786444, 0, 131073, 786445, 0, 0, 786446, 0, 5, 786449, 0, 0, 786450, 0, 131074, 786452, 0, 327681, 851979, 0, 65536, 851981, 0, 131075, 851982, 0, 0, 851985, 0, 65538, 851989, 0, 0, 917515, 0, 65538, 917518, 0, 131072, 917519, 0, 131073, 917520, 0, 0, 917521, 0, 131074, 917526, 0, 0, 983051, 0, 65538, 983056, 0, 327681, 983063, 0, 262144, 983064, 0, 2, 1048587, 0, 131072, 1048588, 0, 2, 1048600, 0, 327681, 1114124, 0, 131072, 1114125, 0, 2, 1114129, 0, 262144, 1114130, 0, 131073, 1114131, 0, 1, 1114132, 0, 1, 1114133, 0, 1, 1114134, 0, 1, 1114135, 0, 262146, 1179661, 0, 131072, 1179662, 0, 131073, 1179663, 0, 131073, 1179664, 0, 262146 )
+__meta__ = {
+"_editor_description_": ""
+}
 
-[node name="Natse" type="Sprite" parent="TileMap"]
-position = Vector2( 158.322, 96.2689 )
+[node name="Node2D" type="Node2D" parent="MainLayer/ViewportContainer/Viewport"]
+
+[node name="TileMap" type="TileMap" parent="MainLayer/ViewportContainer/Viewport/Node2D"]
+tile_set = SubResource( 53 )
+cell_size = Vector2( 16, 16 )
+compatibility_mode = true
+format = 1
+tile_data = PoolIntArray( 24, 0, 196609, 65547, 0, 196609, 65560, 0, 65538, 131076, 0, 196609, 131083, 0, 131072, 131084, 0, 262146, 131086, 0, 0, 131087, 0, 131073, 131088, 0, 1, 131089, 0, 131073, 131090, 0, 131073, 131091, 0, 262146, 131096, 0, 65538, 196612, 0, 65538, 196621, 0, 262144, 196622, 0, 131074, 196632, 0, 65538, 262148, 0, 131072, 262149, 0, 131073, 262150, 0, 1, 262151, 0, 131073, 262152, 0, 262146, 262168, 0, 327681, 327699, 0, 262144, 327700, 0, 131073, 327701, 0, 1, 327702, 0, 131073, 327703, 0, 262146, 393232, 0, 262144, 393233, 0, 131073, 393234, 0, 2, 458756, 0, 196609, 458760, 0, 196609, 458770, 0, 65536, 524292, 0, 65536, 524296, 0, 65538, 524306, 0, 65536, 589828, 0, 327681, 589832, 0, 131072, 589833, 0, 262146, 589837, 0, 3, 589838, 0, 4, 589839, 0, 5, 589842, 0, 65536, 655373, 0, 65539, 655374, 0, 65540, 655375, 0, 65541, 655377, 0, 262144, 655378, 0, 131074, 720909, 0, 131075, 720910, 0, 131076, 720911, 0, 131077 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Natse" type="Sprite" parent="MainLayer/ViewportContainer/Viewport/Node2D/TileMap"]
+position = Vector2( 135, 96 )
 texture = ExtResource( 3 )
 
-[node name="Tree" type="Sprite" parent="TileMap"]
-position = Vector2( 153.495, 175.512 )
+[node name="Tree" type="Sprite" parent="MainLayer/ViewportContainer/Viewport/Node2D/TileMap"]
+position = Vector2( 153, 175 )
 rotation = -3.14159
 texture = ExtResource( 11 )
 
-[node name="Mashroom" type="Sprite" parent="TileMap"]
-position = Vector2( 49.3116, 123.622 )
+[node name="Mashroom" type="Sprite" parent="MainLayer/ViewportContainer/Viewport/Node2D/TileMap"]
+position = Vector2( 49, 123 )
 rotation = -1.57079
 texture = ExtResource( 10 )
 
-[node name="Bluenatse" type="Sprite" parent="TileMap"]
-position = Vector2( 282.617, 80.1788 )
+[node name="Bluenatse" type="Sprite" parent="MainLayer/ViewportContainer/Viewport/Node2D/TileMap"]
+position = Vector2( 282, 80 )
 texture = ExtResource( 2 )
 
-[node name="Present" type="Sprite" parent="TileMap"]
-position = Vector2( 132.862, 57.5966 )
+[node name="Present" type="Sprite" parent="MainLayer/ViewportContainer/Viewport/Node2D/TileMap"]
+position = Vector2( 121.864, 57.336 )
 texture = ExtResource( 9 )
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 107, 54 )
+[node name="Key" type="Area2D" parent="MainLayer/ViewportContainer/Viewport/Node2D"]
+position = Vector2( 135, 39 )
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainLayer/ViewportContainer/Viewport/Node2D/Key"]
+shape = SubResource( 56 )
+
+[node name="Sprite" type="Sprite" parent="MainLayer/ViewportContainer/Viewport/Node2D/Key"]
+use_parent_material = true
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 6 )
+
+[node name="Player" parent="MainLayer/ViewportContainer/Viewport/Node2D" instance=ExtResource( 1 )]
+use_parent_material = false
+position = Vector2( 92, 56 )
+
+[node name="Camera2D" type="Camera2D" parent="MainLayer/ViewportContainer/Viewport/Node2D/Player"]
 rotating = true
 current = true
 limit_left = 0
 limit_top = 0
-limit_right = 341
-limit_bottom = 201
+limit_right = 894
+limit_bottom = 849
 editor_draw_limits = true
 
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color( 0.360784, 0.352941, 0.423529, 1 )
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="MainLayer/ViewportContainer/Viewport/Node2D/Player"]
+remote_path = NodePath("../../../ViewportContainer/Viewport/CanvasLayer/TileMap")
+use_global_coordinates = false
 
-[node name="GameZone" type="Area2D" parent="."]
+[node name="GameZone" type="Area2D" parent="MainLayer/ViewportContainer/Viewport/Node2D"]
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GameZone"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainLayer/ViewportContainer/Viewport/Node2D/GameZone"]
 visible = false
-position = Vector2( 179, 98 )
+position = Vector2( 266.5, 166 )
 shape = SubResource( 29 )
 
-[connection signal="game_over" from="Player" to="." method="_on_Dog_game_over"]
-[connection signal="body_exited" from="GameZone" to="." method="_on_GameZone_body_exited"]
+[node name="Game" type="CanvasLayer" parent="."]
+follow_viewport_enable = true
+
+[node name="ActiveLayer" type="TextureRect" parent="Game"]
+material = SubResource( 70 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 59 )
+expand = true
+stretch_mode = 3
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Game"]
+color = Color( 0.588235, 0.568627, 0.698039, 1 )
+
+[node name="Light2D2" type="Light2D" parent="Game"]
+texture = SubResource( 68 )
+offset = Vector2( 170, 100 )
+mode = 2
+range_layer_min = 1
+range_layer_max = 1
+shadow_enabled = true
+
+[node name="Middleground" type="TextureRect" parent="Game"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 67 )
+expand = true
+stretch_mode = 3
+
+[connection signal="game_over" from="MainLayer/ViewportContainer/Viewport/Node2D/Player" to="." method="_on_Dog_game_over"]
+[connection signal="body_exited" from="MainLayer/ViewportContainer/Viewport/Node2D/GameZone" to="." method="_on_GameZone_body_exited"]

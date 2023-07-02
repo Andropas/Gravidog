@@ -84,4 +84,4 @@ func _process(delta):
 	else:
 		$Shape.rotation = rotate_to
 #	$Camera2D.rotation = $Shape.rotation
-	vel = move_and_slide(vel, -gravityVec)
+	vel = move_and_slide(vel, -gravityVec, true, 4, 0.0, false)
