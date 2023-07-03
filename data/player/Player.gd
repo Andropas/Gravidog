@@ -87,6 +87,7 @@ func _process(delta):
 		$Shape.rotation += rotating_speed*delta*sign(rotate_to - $Shape.rotation)
 	else:
 		$Shape.rotation = rotate_to
+	
 	# CHANGE WITH TWEENS
 	
 	vel = move_and_slide(vel, -gravityVec, true, 4, 0.0, false)

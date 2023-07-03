@@ -8,18 +8,20 @@ var deceleration = 300
 
 func _on_body_entered(body):
 	if body.name == "Player":
-		set_deferred("monitoring", false)
 		following = body
-		body.emit_signal("picked_item", self)
 		body.connect("picked_item", self, "_on_player_item_changed")
+		body.emit_signal("picked_item", self)
+		
 
 
 func _on_player_item_changed(item):
 	if item != self:
-		print("disconnecting")
 		monitoring = true
 		following.disconnect("picked_item", self, "_on_player_item_changed")
 		following = null
+	else:
+		set_deferred("monitoring", false)
+		$Particles2D.emitting = true
 
 
 func _process(delta):
