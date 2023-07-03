@@ -3,14 +3,16 @@ extends KinematicBody2D
 signal game_over
 
 var gravityVec = Vector2(0, 1)
-var gravity = 1000
-var max_gravity = 500
+var gravity = 1000/3
+var max_gravity = 500/3
 var vel = Vector2()
 var rotating_speed = 10
-export var jumpspeed = 800
-export var speed = 200
+export var jumpspeed = 800/3
+export var speed = 200/3
 var can_change_gravity = true
 var rotate_to = 0
+
+signal picked_item(item)
 
 func die():
 	emit_signal("game_over")
@@ -79,9 +81,12 @@ func move(delta):
 
 func _process(delta):
 	move(delta)
+	
+	# CHANGE WITH TWEENS!!!
 	if abs($Shape.rotation - rotate_to) >= rotating_speed*delta:
 		$Shape.rotation += rotating_speed*delta*sign(rotate_to - $Shape.rotation)
 	else:
 		$Shape.rotation = rotate_to
-#	$Camera2D.rotation = $Shape.rotation
-	vel = move_and_slide(vel, -gravityVec)
+	# CHANGE WITH TWEENS
+	
+	vel = move_and_slide(vel, -gravityVec, true, 4, 0.0, false)

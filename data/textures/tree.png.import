@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/natse.png-7133ae800730979f90ba383e7300ce5c.stex"
+path="res://.import/tree.png-aaa5f03cd0f6b529a936cee8546c3e87.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://data/levels/demo/natse.png"
-dest_files=[ "res://.import/natse.png-7133ae800730979f90ba383e7300ce5c.stex" ]
+source_file="res://data/textures/tree.png"
+dest_files=[ "res://.import/tree.png-aaa5f03cd0f6b529a936cee8546c3e87.stex" ]
 
 [params]
 
@@ -28,6 +28,7 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
+process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=false

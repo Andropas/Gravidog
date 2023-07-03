@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/loza.png-84b793f93fa4f710e2577a20923206c6.stex"
+path="res://.import/loza.png-df3e7b38c30b0be8910ebd32634be365.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://data/levels/demo/loza.png"
-dest_files=[ "res://.import/loza.png-84b793f93fa4f710e2577a20923206c6.stex" ]
+source_file="res://data/textures/loza.png"
+dest_files=[ "res://.import/loza.png-df3e7b38c30b0be8910ebd32634be365.stex" ]
 
 [params]
 
@@ -28,6 +28,7 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
+process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=false

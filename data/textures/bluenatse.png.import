@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/present.png-beb4b74e60a5ea297e1e7ff71766abf4.stex"
+path="res://.import/bluenatse.png-5479e42259b847f9b6fc8bc9df9c95ce.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://data/levels/demo/present.png"
-dest_files=[ "res://.import/present.png-beb4b74e60a5ea297e1e7ff71766abf4.stex" ]
+source_file="res://data/textures/bluenatse.png"
+dest_files=[ "res://.import/bluenatse.png-5479e42259b847f9b6fc8bc9df9c95ce.stex" ]
 
 [params]
 

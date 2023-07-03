@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bluenatse.png-b0814e2afa2e2614d4a08c8999dda7e9.stex"
+path="res://.import/natse.png-bad01803c4c73f5185ca16e7a9d7aa40.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://data/levels/demo/bluenatse.png"
-dest_files=[ "res://.import/bluenatse.png-b0814e2afa2e2614d4a08c8999dda7e9.stex" ]
+source_file="res://data/textures/natse.png"
+dest_files=[ "res://.import/natse.png-bad01803c4c73f5185ca16e7a9d7aa40.stex" ]
 
 [params]
 
@@ -28,6 +28,7 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
+process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=false

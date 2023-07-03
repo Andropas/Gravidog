@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bg.png-33bca1077e66d5cf5d9106f0125c7039.stex"
+path="res://.import/mashroom.png-1fdaa77205acf185c9d659b6303d6d21.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://data/levels/demo/bg.png"
-dest_files=[ "res://.import/bg.png-33bca1077e66d5cf5d9106f0125c7039.stex" ]
+source_file="res://data/textures/mashroom.png"
+dest_files=[ "res://.import/mashroom.png-1fdaa77205acf185c9d659b6303d6d21.stex" ]
 
 [params]
 
@@ -28,6 +28,7 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
+process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=false
