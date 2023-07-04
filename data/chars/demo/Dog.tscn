@@ -3,6 +3,7 @@
 [ext_resource path="res://data/chars/demo/Dog.gd" type="Script" id=1]
 [ext_resource path="res://data/player/sprite.png" type="Texture" id=2]
 
+
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 18, 18 )
 

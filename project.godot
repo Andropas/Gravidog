@@ -20,7 +20,12 @@ config/icon="res://icon.png"
 
 [display]
 
+window/size/width=341
+window/size/height=200
+window/size/test_width=1024
+window/size/test_height=600
 window/vsync/use_vsync=false
+window/stretch/mode="2d"
 window/stretch/aspect="expand"
 
 [importer_defaults]
@@ -75,6 +80,13 @@ move_down={
  ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Platforms"
+2d_physics/layer_2="Items"
+2d_physics/layer_3="Bones"
+
 [rendering]
 
+2d/snapping/use_gpu_pixel_snap=true
 environment/default_environment="res://default_env.tres"
