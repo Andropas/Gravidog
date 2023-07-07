@@ -15,7 +15,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Graviboy"
-run/main_scene="res://data/levels/1/Level.tscn"
+run/main_scene="res://data/main/main.tscn"
 config/icon="res://icon.png"
 
 [display]
