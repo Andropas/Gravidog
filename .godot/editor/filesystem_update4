@@ -1,5 +1,0 @@
-res://default_env.tres
-res://data/levels/1/Level.tscn
-res://data/chars/demo/Dog.tscn
-res://data/player/Player.tscn
-res://data/player/Player.gd
