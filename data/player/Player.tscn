@@ -65,7 +65,6 @@ script = ExtResource( 3 )
 
 [node name="Shape" type="CollisionShape2D" parent="."]
 use_parent_material = true
-position = Vector2( 0, -2.5 )
 shape = SubResource( 1 )
 __meta__ = {
 "_editor_description_": ""
@@ -73,7 +72,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="Shape"]
 use_parent_material = true
-position = Vector2( 6, -7.5 )
+position = Vector2( 3, -7.5 )
 texture = ExtResource( 2 )
 hframes = 7
 

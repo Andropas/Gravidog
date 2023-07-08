@@ -24,7 +24,7 @@ func _on_door_change_level(Level, pos):
 
 
 func _on_game_over():
-	anim.play("restart_level")
+	anim.play("change_level")
 	player.position = check_point
 	player.vel = check_velocity
 	player.change_gravity(check_gravity) 
