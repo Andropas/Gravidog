@@ -646,6 +646,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GameZone"]
+visible = false
 position = Vector2( 175, 182 )
 shape = SubResource( 29 )
 
@@ -668,7 +669,7 @@ editor_draw_limits = true
 
 [node name="Door" parent="." instance=ExtResource( 2 )]
 Level = "res://data/levels/1/Level.tscn"
-door_position = Vector2( 410, 107 )
+door_position = Vector2( 320, 107 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
 position = Vector2( -8, 42 )

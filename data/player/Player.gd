@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 signal game_over
+onready var anim = $AnimationPlayer
 
 var gravityVec = Vector2(0, 1)
 var gravity = 1000/3
@@ -39,15 +40,11 @@ func move(delta):
 #	vel.y *= abs(gravityVec.y)
 	
 	if Input.is_action_pressed("move_left"):
-#		if is_on_floor():
-#			vel = speed * (-Vector2(gravityVec.y, -gravityVec.x))
 		if gravityVec.y:
 			vel.x = -speed
 			$Shape.scale.x = -gravityVec.y
 
 	if Input.is_action_pressed("move_right"):
-#		if is_on_floor():
-#			vel = speed * (Vector2(gravityVec.y, -gravityVec.x))
 		if gravityVec.y:
 			vel.x = speed * abs(gravityVec.y)
 			$Shape.scale.x = gravityVec.y
@@ -91,3 +88,7 @@ func _process(delta):
 	# CHANGE WITH TWEENS
 	
 	vel = move_and_slide(vel, -gravityVec, true, 4, 0.0, false)
+	if is_on_floor() and (vel*gravityVec).length() == 0 and vel:
+		anim.play("move")
+	else:
+		anim.play("idle")
