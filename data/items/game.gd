@@ -1,7 +1,7 @@
 extends Node2D
 
-@onready var current_level = get_child(0)
-@onready var player = $Level/Player
+@onready var current_level = get_node("Level")
+@onready var player = get_node("Level/Player")
 @onready var check_point = player.position
 @onready var check_velocity = player.vel
 @onready var check_gravity = player.gravityVec

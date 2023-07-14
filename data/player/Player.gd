@@ -1,15 +1,15 @@
-extends KinematicBody2D
+extends CharacterBody2D
 
 signal game_over
-onready var anim = $AnimationPlayer
+@onready var anim = $AnimationPlayer
 
 var gravityVec = Vector2(0, 1)
 var gravity = 1000/3
 var max_gravity = 500/3
 var vel = Vector2()
 var rotating_speed = 10
-export var jumpspeed = 800/3
-export var speed = 200/3
+@export var jumpspeed = 800/3
+@export var speed = 200/3
 var can_change_gravity = true
 var rotate_to = 0
 
@@ -42,22 +42,22 @@ func move(delta):
 	if Input.is_action_pressed("move_left"):
 		if gravityVec.y:
 			vel.x = -speed
-			$Shape.scale.x = -gravityVec.y
+			$Shape3D.scale.x = -gravityVec.y
 
 	if Input.is_action_pressed("move_right"):
 		if gravityVec.y:
 			vel.x = speed * abs(gravityVec.y)
-			$Shape.scale.x = gravityVec.y
+			$Shape3D.scale.x = gravityVec.y
 	
 	if Input.is_action_pressed("move_up"):
 		if gravityVec.x:
 			vel.y = -speed
-			$Shape.scale.x = gravityVec.x
+			$Shape3D.scale.x = gravityVec.x
 	
 	if Input.is_action_pressed("move_down"):
 		if gravityVec.x:
 			vel.y = speed
-			$Shape.scale.x = -gravityVec.x
+			$Shape3D.scale.x = -gravityVec.x
 	
 	if can_change_gravity:
 		if Input.is_action_just_pressed("ui_left"):
@@ -80,14 +80,21 @@ func _process(delta):
 	move(delta)
 	
 	# CHANGE WITH TWEENS!!!
-	if abs($Shape.rotation - rotate_to) >= rotating_speed*delta:
-		$Shape.rotation += rotating_speed*delta*sign(rotate_to - $Shape.rotation)
+	if abs($Shape3D.rotation - rotate_to) >= rotating_speed*delta:
+		$Shape3D.rotation += rotating_speed*delta*sign(rotate_to - $Shape3D.rotation)
 	else:
-		$Shape.rotation = rotate_to
+		$Shape3D.rotation = rotate_to
 	
 	# CHANGE WITH TWEENS
 	
-	vel = move_and_slide(vel, -gravityVec, true, 4, 0.0, false)
+	set_velocity(vel)
+	set_up_direction(-gravityVec)
+	set_floor_stop_on_slope_enabled(true)
+	set_max_slides(4)
+	set_floor_max_angle(0.0)
+	# TODOConverter40 infinite_inertia were removed in Godot 4.0 - previous value `false`
+	move_and_slide()
+	vel = velocity
 	if is_on_floor() and (vel*gravityVec).length() == 0 and vel:
 		anim.play("move")
 	else:
