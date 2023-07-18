@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://xfm8yn2sksv2"]
+
+[ext_resource type="Texture2D" uid="uid://cu7gpegs2al3s" path="res://textures/tilesheet.png" id="1_d4nfb"]
+[ext_resource type="Script" path="res://scenes/levels/obstacles/spykes.gd" id="2_g2xeg"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rhrx1"]
+texture = ExtResource("1_d4nfb")
+6:0/0 = 0
+6:0/0/modulate = Color(0.85098, 0.0156863, 0.192157, 1)
+6:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:0/0/physics_layer_0/angular_velocity = 0.0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_8atin"]
+tile_layout = 1
+physics_layer_0/collision_layer = 0
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_rhrx1")
+
+[node name="Spykes" type="TileMap"]
+z_index = 1
+tile_set = SubResource("TileSet_8atin")
+format = 2
+script = ExtResource("2_g2xeg")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]

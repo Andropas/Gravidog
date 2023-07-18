@@ -1,0 +1,104 @@
+[gd_scene load_steps=10 format=3 uid="uid://c1rbbpn7qfn40"]
+
+[ext_resource type="Script" path="res://scenes/player/Player.gd" id="1_qgfy8"]
+[ext_resource type="Texture2D" uid="uid://1pv7e6t02ki5" path="res://textures/player/spritesheet1.png" id="2_tlp4u"]
+[ext_resource type="Texture2D" uid="uid://y46cunithhfh" path="res://scenes/player/nimb.png" id="3_h86wj"]
+
+[sub_resource type="CircleShape2D" id="1"]
+custom_solver_bias = 1.0
+radius = 7.0
+
+[sub_resource type="Animation" id="3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shape3D/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="4"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shape3D/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="5"]
+resource_name = "move"
+length = 0.6
+step = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shape3D/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_htmlo"]
+_data = {
+"RESET": SubResource("3"),
+"idle": SubResource("4"),
+"move": SubResource("5")
+}
+
+[sub_resource type="CircleShape2D" id="2"]
+radius = 16.0
+
+[node name="Player" type="CharacterBody2D" groups=["Dog", "Player", "UseGravity"]]
+z_index = 1
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_qgfy8")
+
+[node name="Shape3D" type="CollisionShape2D" parent="."]
+use_parent_material = true
+shape = SubResource("1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Shape3D"]
+show_behind_parent = true
+use_parent_material = true
+texture = ExtResource("2_tlp4u")
+offset = Vector2(3, -7.5)
+hframes = 4
+frame = 1
+
+[node name="Sprite2" type="Sprite2D" parent="Shape3D/Sprite2D"]
+visible = false
+use_parent_material = true
+position = Vector2(-4.76837e-07, -3)
+texture = ExtResource("3_h86wj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "idle"
+libraries = {
+"": SubResource("AnimationLibrary_htmlo")
+}
+
+[node name="BoneArea" type="Area2D" parent="."]
+visible = false
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BoneArea"]
+shape = SubResource("2")

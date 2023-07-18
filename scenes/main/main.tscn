@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://n7hbvoo67rju"]
+
+[ext_resource type="Script" path="res://scenes/main/game.gd" id="1_kjd8i"]
+[ext_resource type="PackedScene" uid="uid://d37cg1pavc2pi" path="res://scenes/levels/1/Level.tscn" id="2_frkgi"]
+[ext_resource type="PackedScene" uid="uid://c1rbbpn7qfn40" path="res://scenes/player/Player.tscn" id="3_p2wex"]
+
+[sub_resource type="Animation" id="Animation_mlync"]
+resource_name = "change_level"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b6t7e"]
+_data = {
+"change_level": SubResource("Animation_mlync")
+}
+
+[node name="Main" type="Node2D"]
+texture_filter = 1
+
+[node name="Game" type="Node2D" parent="."]
+script = ExtResource("1_kjd8i")
+
+[node name="Level" parent="Game" instance=ExtResource("2_frkgi")]
+
+[node name="Player" parent="Game/Level" instance=ExtResource("3_p2wex")]
+position = Vector2(93, 168)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Game"]
+libraries = {
+"": SubResource("AnimationLibrary_b6t7e")
+}
+
+[connection signal="game_over" from="Game/Level/Player" to="Game" method="_on_game_over"]
